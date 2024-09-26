@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+    FakePinterest
+{% endblock %}
+
+{% block texto %}
+<body>
+    {% include 'navbar.html' %}
+    
+
+    <div class="container">
+     
+
+        <div class="conteudo">
+        {% for foto in fotos %}
+          <a href="{{url_for('perfil', id_usuario= foto.id_usuario)}}" class="bloco-imagem">
+            <img src="{{ url_for('static' , filename = 'fotos_post/{}'.format(foto.imagem)) }}" />
+          </a>
+        {% endfor %}
+  
+          
+        </div>
+      </div>
+
+
+</body>
+{% endblock %}
+
+
