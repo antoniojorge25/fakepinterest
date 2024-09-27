@@ -28,7 +28,7 @@ def criarconta():
                           ,senha= senha)
         database.session.add(usuario)
         database.session.commit()
-        logout_user()
+        logout_user(usuario, remember=True)
         return redirect(url_for('perfil', id_usuario= usuario.id))
     return render_template('criar_conta.html', form = formcriarconta)
 
